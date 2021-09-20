@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  --darkmode-color: rgb(25, 25, 25);
+  --lightmode-color: rgb(236, 236, 236);
+}
+
+.home-darkmode, .home-lightmode {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  transition: 500ms ease;
+  width: 100vw;
+}
+
+.home-darkmode {
+  background-color: var(--darkmode-color);
+}
+
+.home-lightmode {
+  background-color: var(--lightmode-color);
+}
+
+.switch-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  width: 200px;
+}
+
+.svg-container {
+  height: 100px;
+  margin-bottom: 1em;
+  width: 100px;
+}
+
+.svg-container .moon {
+  color: var(--lightmode-color);
+}
+
+.svg-container .sun {
+  color: var(--darkmode-color);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  height: 25px;
+  outline: none;
+  transition: 500ms ease;
+  width: 50px;
+}
+
+input[type="checkbox"]::before {
+  background: rgb(230, 230, 230);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  content: '';
+  height: 25px;
+  left: 0;
+  top: 0;
+  transform: scale(1.1);
+  transition: 400ms ease;
+  width: 25px;
+}
+
+input:checked[type="checkbox"]::before {
+  margin-left: 25px;
+}
+
+.light-btn {
+  background-color: var(--lightmode-color);
+  color: var(--darkmode-color);
+}
+
+.dark-btn {
+  background-color: var(--darkmode-color);
+  color: var(--lightmode-color);
+}
